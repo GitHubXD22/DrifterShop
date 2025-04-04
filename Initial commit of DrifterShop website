@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DrifterShop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white text-black min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-md text-center p-6">
+      <div class="flex justify-end mb-4">
+        <select
+          id="language"
+          class="border rounded px-2 py-1"
+          onchange="switchLanguage()"
+        >
+          <option value="en">English</option>
+          <option value="cz">Čeština</option>
+        </select>
+      </div>
+      <h1 id="title" class="text-3xl font-bold mb-2">DrifterShop</h1>
+      <h2 id="subtitle" class="text-xl mb-4">Wireless Pro Pods</h2>
+      <p id="description" class="mb-6">
+        High-quality wireless earphones with noise cancellation and long battery life.
+      </p>
+      <a
+        href="https://www.paypal.com"
+        target="_blank"
+        id="buyButton"
+        class="block w-full bg-black text-white py-3 rounded hover:bg-gray-800 transition"
+      >
+        Buy Now
+      </a>
+    </div>
+
+    <script>
+      const translations = {
+        en: {
+          title: "DrifterShop",
+          subtitle: "Wireless Pro Pods",
+          description:
+            "High-quality wireless earphones with noise cancellation and long battery life.",
+          buyNow: "Buy Now",
+        },
+        cz: {
+          title: "DrifterShop",
+          subtitle: "Bezdrátová Pro Sluchátka",
+          description:
+            "Vysoce kvalitní bezdrátová sluchátka s potlačením hluku a dlouhou výdrží baterie.",
+          buyNow: "Koupit nyní",
+        },
+      };
+
+      function switchLanguage() {
+        const lang = document.getElementById("language").value;
+        const t = translations[lang];
+
+        document.getElementById("title").textContent = t.title;
+        document.getElementById("subtitle").textContent = t.subtitle;
+        document.getElementById("description").textContent = t.description;
+        document.getElementById("buyButton").textContent = t.buyNow;
+      }
+    </script>
+  </body>
+</html>
